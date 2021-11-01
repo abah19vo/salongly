@@ -1,0 +1,6 @@
+
+
+enum userType{
+  admin,
+  user,
+}
