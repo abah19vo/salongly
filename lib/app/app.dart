@@ -1,11 +1,13 @@
 import 'package:salongly/models/user.dart';
 import 'package:salongly/services/user_service.dart';
 import 'package:salongly/ui/screens/home_page/home_view.dart';
+import 'package:salongly/ui/screens/registration_page/registration_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 
 @StackedApp(
   routes: [
-    MaterialRoute(page: HomeView, initial: true),
+    MaterialRoute(page: HomeView,),
+    MaterialRoute(page: RegistrationView, initial: true),
   ],
   dependencies: [
     LazySingleton(classType: UserService),
