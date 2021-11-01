@@ -17,6 +17,11 @@ dependencies:
   cupertino_icons: ^1.0.3
   stacked: ^2.2.5
   stacked_services: ^0.8.13
+  firebase_auth: ^3.1.4
+  cloud_firestore: ^2.5.4
+  firebase_messaging: ^10.0.9
+  firebase_storage: ^10.0.6
+  firebase_core: ^1.8.0
 
 dev_dependencies:
   stacked_generator: ^0.5.1
@@ -35,6 +40,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  fonts:
+  - family: ITCAvantGardeStd-Bold
+    fonts:
+      - asset: assets/fonts/ITCAvantGardeStd-Bold.otf
+
+  - family: Lato-Regular
+    fonts:
+      - asset: assets/fonts/Lato-Regular.ttf   
 
   # To add assets to your application, add an assets section, like this:
   # assets:
