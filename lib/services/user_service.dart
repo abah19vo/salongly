@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/models/user.dart' as userModel;
 
 class UserService {
@@ -7,18 +8,18 @@ class UserService {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-  userModel.User user = userModel.User();
+  userModel.User _user = locator< userModel.User>();
 
-  Future<void> register(userModel.User _user) async {
+  Future<void> register(userModel.User user) async {
     try {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
-        email: _user.email,
-        password: _user.password,
+        email: user.email,
+        password: user.password,
       )
           .then((userCredential) {
         userCredential.user?.sendEmailVerification();
-        users.doc(userCredential.user!.uid).set(_user.toJson());
+        users.doc(userCredential.user!.uid).set(user.toJson());
       });
     } catch (e) {
       print(e);
@@ -26,17 +27,17 @@ class UserService {
     }
   }
 
-  Future<void> login(userModel.User _user) async {
+  Future<void> login(userModel.User user) async {
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email: _user.email,
-        password: _user.password,
+        email: user.email,
+        password: user.password,
       );
 
       var fUser = userCredential.user;
       if (fUser != null && fUser.emailVerified) {
         users.doc(fUser.uid).get().then((fireStoreUser) {
-          user = user.fromJson(fireStoreUser.data() as Map<String, dynamic>);
+          _user = _user.fromJson(fireStoreUser.data() as Map<String, dynamic>);
         });
       } else
         throw Exception('User Is Not Verified');
@@ -45,7 +46,7 @@ class UserService {
     }
   }
 
-  Future<void> recoverPassword(userModel.User _user) {
-    return auth.sendPasswordResetEmail(email: _user.email);
+  Future<void> recoverPassword(userModel.User user) {
+    return auth.sendPasswordResetEmail(email: user.email);
   }
 }

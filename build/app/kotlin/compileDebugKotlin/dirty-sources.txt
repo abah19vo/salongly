@@ -1,0 +1,1 @@
+C:\Users\A-HE-MED\Documents\GitHub\salongly\android\app\src\main\kotlin\com\example\salongly\MainActivity.kt
