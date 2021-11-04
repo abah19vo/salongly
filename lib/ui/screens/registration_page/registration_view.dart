@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:salongly/ui/screens/home_page/home_view.dart';
 import 'package:salongly/ui/screens/login_page/login_view.dart';
 import 'package:salongly/ui/screens/registration_page/registration_viewmodel.dart';
+import 'package:salongly/ui/widgets/error_column.dart';
 import 'package:salongly/ui/widgets/text_input.dart';
 import 'package:salongly/ui/widgets/top_bar.dart';
 import 'package:salongly/ui/widgets/wide_button.dart';
@@ -81,6 +82,10 @@ class RegistrationView extends StatelessWidget {
                       )
                     ],
                   ),
+                  SizedBox(height: 10.0),
+
+                  if (model.validatingErrors.isNotEmpty)
+                    ErrorList(validatingErrors: model.validatingErrors),
                   SizedBox(height: 30.0),
                   WideButton(
                     text: 'Register',
@@ -123,6 +128,7 @@ class RegistrationView extends StatelessWidget {
                       ),
                     ],
                   ),
+
                   SizedBox(height: 20.0),
                   InkWell(
                     onTap: () {

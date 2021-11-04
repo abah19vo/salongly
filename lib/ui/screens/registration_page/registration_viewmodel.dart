@@ -24,7 +24,7 @@ class RegistrationViewmodel extends BaseViewModel {
   void register(BuildContext context) {
     validate();
     notifyListeners();
-    if (validatingErrors.isNotEmpty) {
+    if (validatingErrors.isEmpty) {
       userService.register(user).then((value) {
         Navigator.push(
           context,

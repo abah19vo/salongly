@@ -13,14 +13,12 @@ class LoginViewModel extends BaseViewModel {
 
   void validate() {
     validatingErrors = user.validateLogin();
-
     notifyListeners();
   }
 
   void login(BuildContext context) {
     validate();
-    notifyListeners();
-    if (validatingErrors.isNotEmpty) {
+    if (validatingErrors.isEmpty) {
       try {
         userService.login(user).then((value) {
           Navigator.push(

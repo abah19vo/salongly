@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:salongly/app/app.locator.dart';
@@ -8,7 +10,7 @@ class UserService {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-  userModel.User _user = locator< userModel.User>();
+  userModel.User _user = locator<userModel.User>();
 
   Future<void> register(userModel.User user) async {
     try {
@@ -19,7 +21,9 @@ class UserService {
       )
           .then((userCredential) {
         userCredential.user?.sendEmailVerification();
-        users.doc(userCredential.user!.uid).set(user.toJson());
+        users
+            .doc(userCredential.user!.uid)
+            .set(LinkedHashMap.from(user.toJson()));
       });
     } catch (e) {
       print(e);

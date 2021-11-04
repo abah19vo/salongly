@@ -28,10 +28,7 @@ class User {
       'haircutsHistoryIds': haircutsHistoryIds,
       'userType': userType.toString(),
     };
-    
   }
-
-  
 
   User fromJson(Map json) {
     return User(
@@ -49,8 +46,7 @@ class User {
 extension validation on User {
   List<String> validateLogin() {
     List<String> errors = [];
-    if (this.email.contains(RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"))) {
+    if (!this.email.contains('@')) {
       errors.add('Ogiltigt e-post adress');
     }
     if (this.password.length < 8) errors.add('Ogiltigt lösenord');
@@ -65,8 +61,7 @@ extension validation on User {
 
     if (this.name.isEmpty) errors.add('Ogiltigt namn');
 
-    if (this.phoneNumber.length != 10 || phoneNumber.length != 12)
-      errors.add('Ogiltigt mobil nummer');
+    if (this.phoneNumber.length != 10) errors.add('Ogiltigt mobil nummer');
 
     return errors;
   }
