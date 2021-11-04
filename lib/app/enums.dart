@@ -1,16 +1,17 @@
+import 'package:flutter/material.dart';
+
 enum UserType {
   admin,
   client,
 }
 
-
 extension UserTypeFromString on UserType {
   UserType fromString(String type) {
-    Map types = {
-      'admin': UserType.admin,
-      'client': UserType.client,
-    };
+    return UserType.values.firstWhere((element) => element.toString() == type);
+  }
 
-    return types[type];
+  String toShortString() {
+    return this.toString().split('.').last;
   }
 }
+

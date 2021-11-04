@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:salongly/ui/screens/recover_password_page/recover_password_view.dart';
+import 'package:salongly/ui/widgets/error_column.dart';
 import 'package:salongly/ui/widgets/text_input.dart';
 import 'package:salongly/ui/widgets/top_bar.dart';
 import 'package:salongly/ui/widgets/wide_button.dart';
@@ -31,7 +32,6 @@ class LoginView extends StatelessWidget {
                 flex: 4,
                 child: Container(
                   child: Column(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ///Contains the TextInputs
                       Flexible(
@@ -41,19 +41,20 @@ class LoginView extends StatelessWidget {
                             TextInputWidget(
                               labelText: 'Email',
                               hint: 'Enter Your Email',
-                              onChanged: (value) => print(value),
+                              onChanged: (value) => model.user.email = value,
                             ),
                             SizedBox(height: 30),
                             TextInputWidget(
                               labelText: 'Password',
                               hint: 'Enter Your Password',
-                              onChanged: (value) => print(value),
+                              onChanged: (value) => model.user.password,
                               isPassword: true,
                             ),
                           ],
                         ),
                       ),
-
+                      if (model.validatingErrors.isNotEmpty)
+                        ErrorList(validatingErrors: model.validatingErrors),
                       ///Contains the WideButton and The InkWell
                       Flexible(
                         flex: 1,
@@ -62,7 +63,7 @@ class LoginView extends StatelessWidget {
                             WideButton(
                               text: 'Log in',
                               showWideButton: true,
-                              onTap: () => ('Log in'),
+                              onTap: () => model.login(context),
                               color: Color(0xff78bd76),
                             ),
                             SizedBox(height: 20),

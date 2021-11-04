@@ -28,33 +28,33 @@ class RegistrationView extends StatelessWidget {
                   TextInputWidget(
                     labelText: 'Email',
                     hint: 'Enter Your Email',
-                    onChanged: (value) => print(value),
+                    onChanged: (value) => model.user.email = value,
                   ),
                   SizedBox(height: 20),
                   TextInputWidget(
                     labelText: 'Name',
                     hint: 'Enter Your Name',
-                    onChanged: (value) => print(value),
+                    onChanged: (value) => model.user.name = value,
                   ),
                   SizedBox(height: 20),
                   TextInputWidget(
                     labelText: 'Mobile Number',
                     hint: 'Enter Your Mobile Number',
-                    onChanged: (value) => print(value),
+                    onChanged: (value) => model.user.phoneNumber = value,
                     isNumber: true,
                   ),
                   SizedBox(height: 20),
                   TextInputWidget(
                     labelText: 'Password',
                     hint: 'Enter Your Password',
-                    onChanged: (value) => print(value),
+                    onChanged: (value) => model.user.password = value,
                     isPassword: true,
                   ),
                   SizedBox(height: 20),
                   TextInputWidget(
                     labelText: 'Repeat Password',
                     hint: 'Enter Your Repeat Password',
-                    onChanged: (value) => print(value),
+                    onChanged: (value) => model.repeatedPassword = value,
                     isPassword: true,
                   ),
                   Row(
@@ -85,7 +85,7 @@ class RegistrationView extends StatelessWidget {
                   WideButton(
                     text: 'Register',
                     color: Color(0xff78bd76),
-                    onTap: () => print('Register Button'),
+                    onTap: () => model.register(context),
                     showWideButton: true,
                   ),
                   SizedBox(height: 20.0),

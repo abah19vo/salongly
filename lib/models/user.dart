@@ -28,7 +28,10 @@ class User {
       'haircutsHistoryIds': haircutsHistoryIds,
       'userType': userType.toString(),
     };
+    
   }
+
+  
 
   User fromJson(Map json) {
     return User(

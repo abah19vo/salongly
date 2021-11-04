@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:salongly/ui/screens/recover_password_page/recover_password_viewmodel.dart';
+import 'package:salongly/ui/widgets/error_column.dart';
 import 'package:salongly/ui/widgets/text_input.dart';
 import 'package:salongly/ui/widgets/top_bar.dart';
 import 'package:salongly/ui/widgets/wide_button.dart';
@@ -57,6 +57,19 @@ class RecoverPasswordView extends StatelessWidget {
                           ],
                         ),
                       ),
+                      if (model.validatingErrors.isNotEmpty)
+                        ErrorList(validatingErrors: model.validatingErrors),
+                      if (model.isSent)
+                        Text(
+                          'A reset password is sent',
+                          style: TextStyle(
+                            fontFamily: 'ITCAvantGardeStd-Bold',
+                            color: Color(0xffffffff),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.normal,
+                          ),
+                        ),
                       Flexible(
                         flex: 1,
                         child: WideButton(
