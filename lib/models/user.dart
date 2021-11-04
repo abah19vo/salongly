@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:salongly/app/enums.dart';
 
 class User {
@@ -18,8 +20,10 @@ class User {
     this.password = '',
     this.userType = UserType.client,
   });
+}
 
-  Map toJson() {
+extension userMap on User {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
