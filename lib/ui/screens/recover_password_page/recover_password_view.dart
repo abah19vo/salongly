@@ -39,7 +39,7 @@ class RecoverPasswordView extends StatelessWidget {
                             TextInputWidget(
                               labelText: 'Email',
                               hint: 'Enter Your Email',
-                              onChanged: (value) => print(value),
+                              onChanged: (value) => model.user.email = value,
                             ),
                             SizedBox(height: 30),
                             Text(
@@ -75,7 +75,8 @@ class RecoverPasswordView extends StatelessWidget {
                         child: WideButton(
                           text: 'Send',
                           showWideButton: true,
-                          onTap: () => ('Send'),
+                          onTap: () =>
+                              model.userService.recoverPassword(model.user),
                           color: Color(0xff78bd76),
                         ),
                       ),

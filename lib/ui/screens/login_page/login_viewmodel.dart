@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart' as firebaseAuth;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/models/user.dart';
 import 'package:salongly/services/user_service.dart';
@@ -16,23 +17,26 @@ class LoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void login(BuildContext context) {
+  Future<void> login(BuildContext context) async {
     validate();
+    notifyListeners();
+
     if (validatingErrors.isEmpty) {
-      try {
-        userService.login(user).then((value) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HomeView()),
-          );
-        });
-      } on firebaseAuth.FirebaseAuthException catch (e) {
-        if (e.message != null) validatingErrors.add(e.message!);
+      userService.login(user).then((value) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeView()),
+        );
+      }).onError((firebaseAuth.FirebaseAuthException error, stackTrace) {
+        if (error.message != null) validatingErrors.add(error.message!);
         notifyListeners();
-      } on Exception catch (e) {
-        if (e.toString() is String) validatingErrors.add(e.toString());
+      }).onError((PlatformException error, stackTrace) {
+        if (error.message != null) validatingErrors.add(error.message!);
         notifyListeners();
-      }
+      }).onError((error, stackTrace) {
+        validatingErrors.add(error.toString());
+        notifyListeners();
+      });
     }
   }
 }

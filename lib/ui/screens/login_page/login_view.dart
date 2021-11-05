@@ -47,7 +47,7 @@ class LoginView extends StatelessWidget {
                             TextInputWidget(
                               labelText: 'Password',
                               hint: 'Enter Your Password',
-                              onChanged: (value) => model.user.password,
+                              onChanged: (value) => model.user.password = value,
                               isPassword: true,
                             ),
                           ],

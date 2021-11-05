@@ -21,9 +21,8 @@ class UserService {
       )
           .then((userCredential) {
         userCredential.user?.sendEmailVerification();
-        users
-            .doc(userCredential.user!.uid)
-            .set(LinkedHashMap.from(user.toJson()));
+        user.id = userCredential.user!.uid;
+        users.doc(userCredential.user!.uid).set(user.toMap());
       });
     } catch (e) {
       print(e);
@@ -31,22 +30,27 @@ class UserService {
     }
   }
 
-  Future<void> login(userModel.User user) async {
+  Future<void> login(userModel.User user) {
     try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+      return auth
+          .signInWithEmailAndPassword(
         email: user.email,
         password: user.password,
-      );
-
-      var fUser = userCredential.user;
-      if (fUser != null && fUser.emailVerified) {
-        users.doc(fUser.uid).get().then((fireStoreUser) {
-          _user = _user.fromJson(fireStoreUser.data() as Map<String, dynamic>);
-        });
-      } else
-        throw Exception('User Is Not Verified');
-    } catch (e) {
+      )
+          .then((userCredential) {
+        var fUser = userCredential.user;
+        if (fUser != null && fUser.emailVerified) {
+          users.doc(fUser.uid).get().then((fireStoreUser) {
+            _user =
+                _user.fromJson(fireStoreUser.data() as Map<String, dynamic>);
+          });
+        } else
+          throw 'User Is Not Verified';
+      });
+    } on FirebaseAuthException catch (e) {
       throw e;
+    } catch (e) {
+      throw 'Unknown problem';
     }
   }
 

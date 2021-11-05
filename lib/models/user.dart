@@ -23,13 +23,13 @@ class User {
 }
 
 extension userMap on User {
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'name': name,
       'email': email,
       'phoneNumber': phoneNumber,
-      'haircutsHistoryIds': haircutsHistoryIds,
+      'haircutsHistoryIds': haircutsHistoryIds ?? [],
       'userType': userType.toString(),
     };
   }
