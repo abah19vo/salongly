@@ -5,20 +5,23 @@ class ErrorList extends StatelessWidget {
   final List<String> validatingErrors;
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: validatingErrors
-            .map(
-              (error) => Text(
-                error,
-                style: TextStyle(
-                  color: Colors.red[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.75,
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: validatingErrors
+              .map(
+                (error) => Text(
+                  error,
+                  style: TextStyle(
+                    color: Colors.red[400],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                 ),
-              ),
-            )
-            .toList());
+              )
+              .toList()),
+    );
   }
 }

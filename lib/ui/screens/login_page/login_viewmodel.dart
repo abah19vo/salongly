@@ -11,6 +11,7 @@ class LoginViewModel extends BaseViewModel {
   User user = User();
   final userService = locator<UserService>();
   List<String> validatingErrors = [];
+  bool isLoading = false;
 
   void validate() {
     validatingErrors = user.validateLogin();
@@ -22,6 +23,8 @@ class LoginViewModel extends BaseViewModel {
     notifyListeners();
 
     if (validatingErrors.isEmpty) {
+      isLoading = true;
+      notifyListeners();
       userService.login(user).then((value) {
         Navigator.push(
           context,
@@ -36,7 +39,11 @@ class LoginViewModel extends BaseViewModel {
       }).onError((error, stackTrace) {
         validatingErrors.add(error.toString());
         notifyListeners();
+      }).whenComplete(() {
+        isLoading = false;
+        notifyListeners();
       });
     }
   }
 }
+

@@ -53,7 +53,7 @@ extension validation on User {
     if (!this.email.contains('@')) {
       errors.add('Ogiltigt e-post adress');
     }
-    if (this.password.length < 8) errors.add('Ogiltigt lösenord');
+    if (this.password.length < 7) errors.add('Ogiltigt lösenord');
 
     return errors;
   }
