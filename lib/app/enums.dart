@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 
 enum UserType {
   admin,
   client,
 }
+
+
 
 extension UserTypeFromString on UserType {
   UserType fromString(String type) {

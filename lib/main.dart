@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:salongly/ui/screens/registration_page/registration_view.dart';
+import 'package:salongly/ui/screens/authentication/registration_page/registration_view.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app/app.locator.dart';

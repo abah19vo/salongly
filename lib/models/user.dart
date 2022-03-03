@@ -1,7 +1,9 @@
-import 'dart:collection';
 
+import 'package:json_annotation/json_annotation.dart';
 import 'package:salongly/app/enums.dart';
+part 'generated/user.g.dart';
 
+@JsonSerializable()
 class User {
   String id;
   String name;
@@ -20,31 +22,13 @@ class User {
     this.password = '',
     this.userType = UserType.client,
   });
-}
 
-extension userMap on User {
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'email': email,
-      'phoneNumber': phoneNumber,
-      'haircutsHistoryIds': haircutsHistoryIds ?? [],
-      'userType': userType.toString(),
-    };
-  }
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
-  User fromJson(Map json) {
-    return User(
-      email: json['email'] ?? '',
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      phoneNumber: json['phoneNumber'] ?? '',
-      haircutsHistoryIds: json['haircutsHistoryIds'] ?? [],
-      userType: UserType.client
-          .fromString(json['userType'] ?? UserType.client.toString()),
-    );
-  }
+  /// `toJson` is the convention for a class to declare support for serialization
+  /// to JSON. The implementation simply calls the private, generated
+  /// helper method `_$UserToJson`.
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 
 extension validation on User {

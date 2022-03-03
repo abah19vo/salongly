@@ -1,7 +1,7 @@
 import 'package:salongly/models/user.dart';
 import 'package:salongly/services/user_service.dart';
+import 'package:salongly/ui/screens/authentication/registration_page/registration_view.dart';
 import 'package:salongly/ui/screens/home_page/home_view.dart';
-import 'package:salongly/ui/screens/registration_page/registration_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 

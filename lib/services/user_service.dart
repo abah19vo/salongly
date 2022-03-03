@@ -22,7 +22,7 @@ class UserService {
           .then((userCredential) {
         userCredential.user?.sendEmailVerification();
         user.id = userCredential.user!.uid;
-        users.doc(userCredential.user!.uid).set(user.toMap());
+        users.doc(userCredential.user!.uid).set(user.toJson());
       });
     } catch (e) {
       print(e);
@@ -41,8 +41,7 @@ class UserService {
         var fUser = userCredential.user;
         if (fUser != null && fUser.emailVerified) {
           users.doc(fUser.uid).get().then((fireStoreUser) {
-            _user =
-                _user.fromJson(fireStoreUser.data() as Map<String, dynamic>);
+            _user = userModel.User.fromJson(fireStoreUser.data() as Map<String, dynamic>);
           });
         } else
           throw 'User Is Not Verified';
