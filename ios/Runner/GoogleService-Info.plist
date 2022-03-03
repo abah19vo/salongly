@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>775461283083-e9g8lbjpa1jp6q2i2uiprhjbsl4vhi1i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.775461283083-e9g8lbjpa1jp6q2i2uiprhjbsl4vhi1i</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDMmVEVUHauG5j0OZuJcc1-5dR5fbAYQyo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>775461283083</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.salongly</string>
+	<key>PROJECT_ID</key>
+	<string>salongly-766ea</string>
+	<key>STORAGE_BUCKET</key>
+	<string>salongly-766ea.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:775461283083:ios:dd7b69b09de4938c4d6e0e</string>
+	<key>DATABASE_URL</key>
+	<string>https://salongly-766ea-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
