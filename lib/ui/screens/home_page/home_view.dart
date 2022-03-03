@@ -31,6 +31,11 @@ class HomeView extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               label: "Hair cuts",
+              activeIcon: Icon(
+                Icons.face_retouching_natural_outlined,
+                color: const Color(0xff78bd76),
+                size: 30.0,
+              ),
               icon: Icon(
                 Icons.face_retouching_natural_outlined,
                 size: 30.0,
@@ -38,6 +43,11 @@ class HomeView extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               label: "Bookings",
+              activeIcon: Icon(
+                Icons.calendar_month_rounded,
+                color: const Color(0xff78bd76),
+                size: 30.0,
+              ),
               icon: Icon(
                 Icons.calendar_month_rounded,
                 size: 30.0,
@@ -45,6 +55,11 @@ class HomeView extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               label: "Me",
+              activeIcon: Icon(
+                Icons.calendar_month_rounded,
+                color: const Color(0xff78bd76),
+                size: 30.0,
+              ),
               icon: CircleAvatar(
                 radius: 15.0,
                 backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),

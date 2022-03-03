@@ -48,15 +48,13 @@ class LoginView extends StatelessWidget {
                               TextInputWidget(
                                 labelText: 'Password',
                                 hint: 'Enter Your Password',
-                                onChanged: (value) =>
-                                    model.user.password = value,
+                                onChanged: (value) => model.user.password = value,
                                 isPassword: true,
                               ),
                             ],
                           ),
                         ),
-                        if (model.validatingErrors.isNotEmpty)
-                          ErrorList(validatingErrors: model.validatingErrors),
+                        if (model.validatingErrors.isNotEmpty) ErrorList(validatingErrors: model.validatingErrors),
 
                         ///Contains the WideButton and The InkWell
                         Flexible(
@@ -74,9 +72,7 @@ class LoginView extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            RecoverPasswordView()),
+                                    MaterialPageRoute(builder: (context) => RecoverPasswordView()),
                                   );
                                 },
                                 child: Text(
@@ -100,7 +96,7 @@ class LoginView extends StatelessWidget {
               ],
             ),
           ),
-          if(model.isLoading) CostumeLoadingIndicator(),
+          if (model.isLoading) CostumeLoadingIndicator(),
         ]),
       ),
     );

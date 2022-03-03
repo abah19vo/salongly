@@ -8,7 +8,6 @@ import 'package:stacked/stacked.dart';
 class HaircutsView extends StatelessWidget {
   const HaircutsView({Key? key}) : super(key: key);
   static const List<IconData> _icons = [
-    FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
     FontAwesomeIcons.walking,
     FontAwesomeIcons.biking,

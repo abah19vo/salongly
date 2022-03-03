@@ -132,19 +132,20 @@ class RegistrationView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeView()),
+                        MaterialPageRoute(builder: (context) => HomeView(), settings: RouteSettings()),
                       );
                     },
                     child: Text("Continue as Guest",
                         style: const TextStyle(
-                            color: const Color(0xff78bd76),
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "Lato",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 13.0),
+                          color: const Color(0xff78bd76),
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Lato",
+                          fontStyle: FontStyle.normal,
+                          fontSize: 13.0,
+                        ),
                         textAlign: TextAlign.center),
                   ),
-                  SizedBox(height: 50.0),
+                  SizedBox(height: 80.0),
                 ],
               ),
             ],

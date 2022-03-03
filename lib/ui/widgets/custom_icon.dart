@@ -19,7 +19,7 @@ class CustomIcon extends StatelessWidget {
         height: 60.0,
         width: 60.0,
         decoration: BoxDecoration(
-          color: isSelected ? Colors.blue : Color(0xFFE7EBEE),
+          color: isSelected ? const Color(0xff78bd76) : Color(0xFFE7EBEE),
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Icon(
