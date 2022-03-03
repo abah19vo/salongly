@@ -9,7 +9,7 @@ class CostumeLoadingIndicator extends StatelessWidget {
       child: Container(
         alignment: AlignmentDirectional.center,
         decoration: const BoxDecoration(
-          color: Colors.white70,
+          color: Color.fromARGB(179, 170, 175, 171),
         ),
         child: Container(
           decoration: BoxDecoration(

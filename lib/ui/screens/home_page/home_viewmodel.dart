@@ -1,10 +1,5 @@
 import 'package:stacked/stacked.dart';
 
-class HomeViewModel extends BaseViewModel {
-  String title = '';
+class HomeViewModel extends IndexTrackingViewModel {
 
-  void doSomething() {
-
-    notifyListeners();
-  }
 }

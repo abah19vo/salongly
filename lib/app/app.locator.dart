@@ -12,6 +12,8 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../models/user.dart';
 import '../services/user_service.dart';
+import '../ui/screens/booking/booking_viewmodel.dart';
+import '../ui/screens/haircuts/haircuts_viewmodel.dart';
 import 'enums.dart';
 
 final locator = StackedLocator.instance;
@@ -25,4 +27,6 @@ void setupLocator({String? environment, EnvironmentFilter? environmentFilter}) {
   locator.registerLazySingleton(() => UserService());
   locator.registerLazySingleton(() => User());
   locator.registerLazySingleton(() => NavigationService());
+  locator.registerLazySingleton(() => HaircutsViewModel());
+  locator.registerLazySingleton(() => BookingViewModel());
 }

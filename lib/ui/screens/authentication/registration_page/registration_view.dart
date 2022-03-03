@@ -84,8 +84,7 @@ class RegistrationView extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
 
-                  if (model.validatingErrors.isNotEmpty)
-                    ErrorList(validatingErrors: model.validatingErrors),
+                  if (model.validatingErrors.isNotEmpty) ErrorList(validatingErrors: model.validatingErrors),
                   SizedBox(height: 30.0),
                   WideButton(
                     text: 'Register',
@@ -111,8 +110,7 @@ class RegistrationView extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginView()),
+                            MaterialPageRoute(builder: (context) => LoginView()),
                           );
                         },
                         child: Text(
@@ -145,7 +143,8 @@ class RegistrationView extends StatelessWidget {
                             fontStyle: FontStyle.normal,
                             fontSize: 13.0),
                         textAlign: TextAlign.center),
-                  )
+                  ),
+                  SizedBox(height: 50.0),
                 ],
               ),
             ],

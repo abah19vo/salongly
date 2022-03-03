@@ -23,6 +23,7 @@ dependencies:
   json_annotation: ^4.4.0
   font_awesome_flutter: ^9.2.0
   firebase_core: ^1.13.1
+  animations: ^2.0.2
 
 dev_dependencies:  
   json_serializable: ^6.1.1
