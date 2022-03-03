@@ -90,21 +90,18 @@ class _HomeScreenState extends State<HomeView> {
                 Icons.search,
                 size: 30.0,
               ),
-              title: SizedBox.shrink(),
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.local_pizza,
+                Icons.calendar_today,
                 size: 30.0,
               ),
-              title: SizedBox.shrink(),
             ),
             BottomNavigationBarItem(
               icon: CircleAvatar(
                 radius: 15.0,
                 backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
               ),
-              title: SizedBox.shrink(),
             )
           ],
         ),

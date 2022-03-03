@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:salongly/ui/screens/authentication/recover_password_page/recover_password_view.dart';
 import 'package:salongly/ui/widgets/costume_loading_indicator.dart';
 import 'package:salongly/ui/widgets/error_column.dart';
