@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/ui/screens/haircuts/haircuts_viewmodel.dart';
 import 'package:salongly/ui/widgets/custom_icon.dart';
+import 'package:salongly/ui/widgets/haircuts_list.dart';
 import 'package:stacked/stacked.dart';
 
 class HaircutsView extends StatelessWidget {
@@ -49,9 +50,9 @@ class HaircutsView extends StatelessWidget {
                     .toList(),
               ),
               SizedBox(height: 20.0),
-              //DestinationCarousel(),
+              HaircutCarousel(title:'Top haircuts', haircuts: model.haircuts),
               SizedBox(height: 20.0),
-              //HotelCarousel(),
+              HaircutCarousel(title:'Newest', haircuts: model.haircuts),
             ],
           ),
         ),

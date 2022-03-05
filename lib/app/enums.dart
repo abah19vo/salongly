@@ -4,9 +4,13 @@ enum UserType {
   client,
 }
 
+enum HaircutType {
+  child,
+  women,
+  man,
+}
 
-
-extension UserTypeFromString on UserType {
+extension EnumFuncs on Enum {
   UserType fromString(String type) {
     return UserType.values.firstWhere((element) => element.toString() == type);
   }

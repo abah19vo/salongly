@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:salongly/ui/screens/authentication/login_page/login_view.dart';
 import 'package:salongly/ui/screens/authentication/registration_page/registration_viewmodel.dart';

@@ -12,9 +12,7 @@ class CostumeLoadingIndicator extends StatelessWidget {
           color: Color.fromARGB(179, 170, 175, 171),
         ),
         child: Container(
-          decoration: BoxDecoration(
-              color: Colors.blue[200],
-              borderRadius: BorderRadius.circular(10.0)),
+          decoration: BoxDecoration(color: Color.fromARGB(255, 212, 213, 214), borderRadius: BorderRadius.circular(10.0)),
           width: 300.0,
           height: 200.0,
           alignment: AlignmentDirectional.center,
@@ -27,6 +25,7 @@ class CostumeLoadingIndicator extends StatelessWidget {
                   height: 50.0,
                   width: 50.0,
                   child: CircularProgressIndicator(
+                    color: Colors.green,
                     value: null,
                     strokeWidth: 7.0,
                   ),
@@ -37,7 +36,7 @@ class CostumeLoadingIndicator extends StatelessWidget {
                 child: const Center(
                   child: Text(
                     "loading.. wait...",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.green),
                   ),
                 ),
               ),
