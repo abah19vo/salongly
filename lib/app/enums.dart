@@ -1,22 +1,16 @@
-
 enum UserType {
-  admin,
-  client,
+  admin('admin'),
+  client('client');
+
+  final String value;
+  const UserType(this.value);
 }
 
 enum HaircutType {
-  child,
-  women,
-  man,
+  child('child'),
+  women('women'),
+  man('man');
+
+  final String value;
+  const HaircutType(this.value);
 }
-
-extension EnumFuncs on Enum {
-  UserType fromString(String type) {
-    return UserType.values.firstWhere((element) => element.toString() == type);
-  }
-
-  String toShortString() {
-    return this.toString().split('.').last;
-  }
-}
-

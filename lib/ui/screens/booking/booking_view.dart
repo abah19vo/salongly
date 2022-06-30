@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/ui/screens/booking/booking_viewmodel.dart';
-import 'package:salongly/ui/screens/haircuts/haircuts_viewmodel.dart';
 import 'package:salongly/ui/widgets/custom_icon.dart';
 import 'package:stacked/stacked.dart';
 

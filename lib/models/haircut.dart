@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:salongly/app/enums.dart';
-part 'generated/haircut.g.dart';
+part 'haircut.g.dart';
 
 @JsonSerializable()
 class Haircut {

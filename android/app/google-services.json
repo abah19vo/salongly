@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:775461283083:android:bfbb3b00c3df03984d6e0e",
+        "mobilesdk_app_id": "1:775461283083:android:2386a6cbd19203e74d6e0e",
         "android_client_info": {
           "package_name": "com.example.salongly"
         }
@@ -30,6 +30,13 @@
             {
               "client_id": "775461283083-in3gob5qb26rh31sq92vv4anhp49tj5v.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "775461283083-e9g8lbjpa1jp6q2i2uiprhjbsl4vhi1i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.salongly"
+              }
             }
           ]
         }

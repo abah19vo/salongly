@@ -14,6 +14,7 @@ import '../models/user.dart';
 import '../services/user_service.dart';
 import '../ui/screens/booking/booking_viewmodel.dart';
 import '../ui/screens/haircuts/haircuts_viewmodel.dart';
+import 'enums.dart';
 
 final locator = StackedLocator.instance;
 

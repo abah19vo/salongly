@@ -132,7 +132,7 @@ class HaircutCarousel extends StatelessWidget {
                                       ),
                                       SizedBox(width: 5.0),
                                       Text(
-                                        haircut.type!.toShortString(),
+                                        haircut.type!.value,
                                         style: TextStyle(
                                           color: Colors.white,
                                         ),

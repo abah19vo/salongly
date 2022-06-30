@@ -1,14 +1,12 @@
 name: salongly
 description: A new Flutter project.
 
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -25,7 +23,7 @@ dependencies:
   firebase_core: ^1.13.1
   animations: ^2.0.2
 
-dev_dependencies:  
+dev_dependencies:
   json_serializable: ^6.1.1
   stacked_generator: ^0.5.1
   build_runner: ^2.1.2
@@ -38,20 +36,19 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   fonts:
-  - family: ITCAvantGardeStd-Bold
-    fonts:
-      - asset: assets/fonts/ITCAvantGardeStd-Bold.otf
+    - family: ITCAvantGardeStd-Bold
+      fonts:
+        - asset: assets/fonts/ITCAvantGardeStd-Bold.otf
 
-  - family: Lato-Regular
-    fonts:
-      - asset: assets/fonts/Lato-Regular.ttf   
+    - family: Lato-Regular
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

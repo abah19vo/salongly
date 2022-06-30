@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/models/user.dart';
 import 'package:salongly/services/user_service.dart';
 import 'package:salongly/ui/screens/authentication/login_page/login_view.dart';
-import 'package:salongly/ui/screens/home_page/home_view.dart';
 import 'package:stacked/stacked.dart';
 
 class RegistrationViewmodel extends BaseViewModel {

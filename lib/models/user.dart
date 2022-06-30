@@ -1,7 +1,7 @@
 
 import 'package:json_annotation/json_annotation.dart';
 import 'package:salongly/app/enums.dart';
-part 'generated/user.g.dart';
+part 'user.g.dart';
 
 @JsonSerializable()
 class User {
