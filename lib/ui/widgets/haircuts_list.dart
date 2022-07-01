@@ -1,9 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salongly/app/enums.dart';
+import 'package:salongly/app/theme.dart';
 import 'package:salongly/models/haircut.dart';
-
-
 
 class HaircutCarousel extends StatelessWidget {
   const HaircutCarousel({
@@ -22,7 +22,7 @@ class HaircutCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Top Haircuts',
+                title,
                 style: TextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class HaircutCarousel extends StatelessWidget {
                 child: Text(
                   'See All',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: CustomeColors.blue,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
@@ -65,7 +65,7 @@ class HaircutCarousel extends StatelessWidget {
                           height: 120.0,
                           width: 200.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: CustomeColors.white,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
@@ -84,11 +84,11 @@ class HaircutCarousel extends StatelessWidget {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: CustomeColors.white,
                           borderRadius: BorderRadius.circular(20.0),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black26,
+                              color: CustomeColors.black,
                               offset: Offset(0.0, 2.0),
                               blurRadius: 6.0,
                             ),
@@ -103,7 +103,7 @@ class HaircutCarousel extends StatelessWidget {
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: NetworkImage(haircut.imgUrl),
+                                  image: NetworkImage(haircut.imgUrl), // todo remove this shit
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -117,7 +117,7 @@ class HaircutCarousel extends StatelessWidget {
                                   Text(
                                     haircut.name,
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: CustomeColors.white,
                                       fontSize: 24.0,
                                       fontWeight: FontWeight.w600,
                                       letterSpacing: 1.2,
@@ -128,13 +128,13 @@ class HaircutCarousel extends StatelessWidget {
                                       Icon(
                                         FontAwesomeIcons.locationArrow,
                                         size: 10.0,
-                                        color: Colors.white,
+                                        color: CustomeColors.white,
                                       ),
                                       SizedBox(width: 5.0),
                                       Text(
                                         haircut.type!.value,
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: CustomeColors.white,
                                         ),
                                       ),
                                     ],

@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 import 'package:salongly/ui/screens/booking/booking_view.dart';
 import 'package:salongly/ui/screens/haircuts/haircuts_view.dart';
 import 'package:salongly/ui/screens/home_page/home_viewmodel.dart';
@@ -33,7 +34,7 @@ class HomeView extends StatelessWidget {
               label: "Hair cuts",
               activeIcon: Icon(
                 Icons.face_retouching_natural_outlined,
-                color: const Color(0xff78bd76),
+                color: CustomeColors.green,
                 size: 30.0,
               ),
               icon: Icon(
@@ -45,7 +46,7 @@ class HomeView extends StatelessWidget {
               label: "Bookings",
               activeIcon: Icon(
                 Icons.calendar_month_rounded,
-                color: const Color(0xff78bd76),
+                color: CustomeColors.green,
                 size: 30.0,
               ),
               icon: Icon(
@@ -57,7 +58,7 @@ class HomeView extends StatelessWidget {
               label: "Me",
               activeIcon: Icon(
                 Icons.calendar_month_rounded,
-                color: const Color(0xff78bd76),
+                color: CustomeColors.green,
                 size: 30.0,
               ),
               icon: CircleAvatar(

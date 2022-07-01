@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 
 class ErrorList extends StatelessWidget {
   const ErrorList({required this.validatingErrors, Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class ErrorList extends StatelessWidget {
                 (error) => Text(
                   error,
                   style: TextStyle(
-                    color: Colors.red[400],
+                    color: CustomeColors.red,
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
                   ),

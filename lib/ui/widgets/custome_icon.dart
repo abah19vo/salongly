@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 
-class CustomIcon extends StatelessWidget {
-  const CustomIcon({
+class CustomeIcon extends StatelessWidget {
+  const CustomeIcon({
     Key? key,
     this.onTap,
     required this.isSelected,
@@ -19,13 +20,13 @@ class CustomIcon extends StatelessWidget {
         height: 60.0,
         width: 60.0,
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xff78bd76) : Color(0xFFE7EBEE),
+          color: isSelected ? CustomeColors.green : CustomeColors.lightgrey,
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Icon(
           icon,
           size: 25.0,
-          color: isSelected ? Colors.white : Color.fromARGB(255, 98, 107, 109),
+          color: isSelected ? CustomeColors.white : CustomeColors.grey,
         ),
       ),
     );

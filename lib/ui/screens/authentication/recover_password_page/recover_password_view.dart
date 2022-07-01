@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 import 'package:salongly/ui/screens/authentication/recover_password_page/recover_password_viewmodel.dart';
 import 'package:salongly/ui/widgets/error_column.dart';
 import 'package:salongly/ui/widgets/text_input.dart';
@@ -24,7 +25,7 @@ class RecoverPasswordView extends StatelessWidget {
                 ),
               ),
               // UPPP
-              // SizedBox(height: 30),
+              // SizedBox(height: UiMeasurments.mediumRowSpace),
               Flexible(
                 flex: 4,
                 child: Container(
@@ -40,13 +41,13 @@ class RecoverPasswordView extends StatelessWidget {
                               hint: 'Enter Your Email',
                               onChanged: (value) => model.user.email = value,
                             ),
-                            SizedBox(height: 30),
+                            SizedBox(height: UiMeasurments.mediumRowSpace),
                             Text(
                                 '''Please provide the email address you used to register.\nWe will send you an email.\nWith a link to reset your password''',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Lato',
-                                  color: Color(0xff212121),
+                                  color: CustomeColors.black,
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
@@ -62,7 +63,7 @@ class RecoverPasswordView extends StatelessWidget {
                           'A reset password is sent',
                           style: TextStyle(
                             fontFamily: 'ITCAvantGardeStd-Bold',
-                            color: Color(0xffffffff),
+                            color: CustomeColors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
                             fontStyle: FontStyle.normal,
@@ -74,10 +75,10 @@ class RecoverPasswordView extends StatelessWidget {
                           text: 'Send',
                           showWideButton: true,
                           onTap: () => model.userService.recoverPassword(model.user),
-                          color: Color(0xff78bd76),
+                          color: CustomeColors.green,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: UiMeasurments.smallRowSpace),
                     ],
                   ),
                 ),

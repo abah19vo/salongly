@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salongly/app/app.locator.dart';
 import 'package:salongly/ui/screens/haircuts/haircuts_viewmodel.dart';
-import 'package:salongly/ui/widgets/custom_icon.dart';
+import 'package:salongly/ui/widgets/custome_icon.dart';
 import 'package:salongly/ui/widgets/haircuts_list.dart';
 import 'package:stacked/stacked.dart';
 
@@ -42,7 +42,7 @@ class HaircutsView extends StatelessWidget {
                 children: _icons
                     .asMap()
                     .entries
-                    .map((map) => CustomIcon(
+                    .map((map) => CustomeIcon(
                           onTap: () => model.selectedIndex = map.key,
                           icon: map.value,
                           isSelected: map.key == model.selectedIndex,
@@ -50,9 +50,11 @@ class HaircutsView extends StatelessWidget {
                     .toList(),
               ),
               SizedBox(height: 20.0),
-              HaircutCarousel(title:'Top haircuts', haircuts: model.haircuts),
-              SizedBox(height: 20.0),
-              HaircutCarousel(title:'Newest', haircuts: model.haircuts),
+              HaircutCarousel(
+                title: 'Top haircuts',
+                haircuts: model.haircuts,
+              ),
+              
             ],
           ),
         ),

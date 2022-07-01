@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 import 'package:salongly/ui/screens/authentication/login_page/login_view.dart';
 import 'package:salongly/ui/screens/authentication/registration_page/registration_viewmodel.dart';
 import 'package:salongly/ui/screens/home_page/home_view.dart';
@@ -20,7 +21,7 @@ class RegistrationView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Topbar(text: "Register"),
-              SizedBox(height: 30),
+              SizedBox(height: UiMeasurments.mediumRowSpace),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -30,27 +31,27 @@ class RegistrationView extends StatelessWidget {
                     hint: 'Enter Your Email',
                     onChanged: (value) => model.user.email = value,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: UiMeasurments.smallRowSpace),
                   TextInputWidget(
                     labelText: 'Name',
                     hint: 'Enter Your Name',
                     onChanged: (value) => model.user.name = value,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: UiMeasurments.smallRowSpace),
                   TextInputWidget(
                     labelText: 'Mobile Number',
                     hint: 'Enter Your Mobile Number',
                     onChanged: (value) => model.user.phoneNumber = value,
                     isNumber: true,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: UiMeasurments.smallRowSpace),
                   TextInputWidget(
                     labelText: 'Password',
                     hint: 'Enter Your Password',
                     onChanged: (value) => model.user.password = value,
                     isPassword: true,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: UiMeasurments.smallRowSpace),
                   TextInputWidget(
                     labelText: 'Repeat Password',
                     hint: 'Enter Your Repeat Password',
@@ -64,20 +65,19 @@ class RegistrationView extends StatelessWidget {
                         height: 60,
                         decoration: BoxDecoration(),
                         child: Checkbox(
-                            value: model.checked,
-                            checkColor: Colors.black,
-                            activeColor: Colors.white,
-                            side: BorderSide(color: Colors.black),
-                            onChanged: (newState) => model.checked = newState),
+                          value: model.checked,
+                          checkColor: CustomeColors.black,
+                          activeColor: CustomeColors.white,
+                          side: BorderSide(
+                            color: CustomeColors.black,
+                          ),
+                          onChanged: (newState) => model.checked = newState,
+                        ),
                       ),
                       Text(
                         "I agree to the terms and conditions",
                         style: const TextStyle(
-                            color: const Color(0xff212121),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Lato",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 13.0),
+                            color: CustomeColors.black, fontWeight: FontWeight.w400, fontFamily: "Lato", fontStyle: FontStyle.normal, fontSize: 13.0),
                       )
                     ],
                   ),
@@ -99,7 +99,7 @@ class RegistrationView extends StatelessWidget {
                         'Already have an account? ',
                         style: TextStyle(
                           fontFamily: 'Lato',
-                          color: Color(0xff212121),
+                          color: CustomeColors.black,
                           fontSize: 13,
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
@@ -116,7 +116,7 @@ class RegistrationView extends StatelessWidget {
                           'Log In',
                           style: TextStyle(
                             fontFamily: 'Lato',
-                            color: Color(0xff78bd76),
+                            color: CustomeColors.green,
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
                             fontStyle: FontStyle.normal,
@@ -136,7 +136,7 @@ class RegistrationView extends StatelessWidget {
                     },
                     child: Text("Continue as Guest",
                         style: const TextStyle(
-                          color: const Color(0xff78bd76),
+                          color: CustomeColors.black,
                           fontWeight: FontWeight.w700,
                           fontFamily: "Lato",
                           fontStyle: FontStyle.normal,

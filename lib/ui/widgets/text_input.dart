@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 
 class TextInputWidget extends StatelessWidget {
   const TextInputWidget({
@@ -30,11 +31,11 @@ class TextInputWidget extends StatelessWidget {
           hintText: hint,
           border: UnderlineInputBorder(),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xff292b2b)),
+            borderSide: BorderSide(color: CustomeColors.darkgrey),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xff292b2b)),
+            borderSide: BorderSide(color: CustomeColors.darkgrey),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
         ),

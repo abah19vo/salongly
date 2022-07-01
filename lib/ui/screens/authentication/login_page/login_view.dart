@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salongly/app/theme.dart';
 import 'package:salongly/ui/screens/authentication/recover_password_page/recover_password_view.dart';
 import 'package:salongly/ui/widgets/costume_loading_indicator.dart';
 import 'package:salongly/ui/widgets/error_column.dart';
@@ -28,7 +29,7 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 // UPPP
-                // SizedBox(height: 30),
+                // SizedBox(height: UiMeasurments.mediumRowSpace),
                 Flexible(
                   flex: 4,
                   child: Container(
@@ -44,7 +45,7 @@ class LoginView extends StatelessWidget {
                                 hint: 'Enter Your Email',
                                 onChanged: (value) => model.user.email = value,
                               ),
-                              SizedBox(height: 30),
+                              SizedBox(height: UiMeasurments.mediumRowSpace),
                               TextInputWidget(
                                 labelText: 'Password',
                                 hint: 'Enter Your Password',
@@ -64,10 +65,10 @@ class LoginView extends StatelessWidget {
                               WideButton(
                                 text: 'Log in',
                                 showWideButton: true,
-                                onTap: () => model.login(context),
-                                color: Color(0xff78bd76),
+                                onTap: model.login,
+                                color: CustomeColors.green,
                               ),
-                              SizedBox(height: 20),
+                              SizedBox(height: UiMeasurments.smallRowSpace),
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -79,7 +80,7 @@ class LoginView extends StatelessWidget {
                                   'I forget my password',
                                   style: TextStyle(
                                     fontFamily: 'Lato',
-                                    color: Color(0xff78bd76),
+                                    color: CustomeColors.green,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w700,
                                     fontStyle: FontStyle.normal,
